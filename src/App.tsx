@@ -1,25 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import MenuItem from "./Pages/MenuItem";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <nav>
+        <Link to="/">menuItem1</Link>
+        <Link to="/menuItem1">menuItem2</Link>
+        <Link to="/menuItem2">menuItem2</Link>
+        <Link to="/menuItem3">menuItem3</Link>
+        <Link to="/menuItem4">menuItem4</Link>
+        <Link to="/menuItem5">menuItem5</Link>
+      </nav>
+      <Routes>
+        <Route path="/" element={<MenuItem />} />
+        <Route path="/menuItem1" element={<MenuItem />} />
+        <Route path="/menuItem2" element={<MenuItem />} />
+        <Route path="/menuItem3" element={<MenuItem />} />
+        <Route path="/menuItem4" element={<MenuItem />} />
+        <Route path="/menuItem5" element={<MenuItem />} />
+      </Routes>
+    </Router>
   );
 }
 
